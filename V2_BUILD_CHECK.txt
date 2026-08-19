@@ -1,0 +1,1 @@
+Trigger CI validation for SIMSCAN FAST v2 after base64 chunk fix.
