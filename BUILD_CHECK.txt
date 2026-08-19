@@ -1,1 +1,2 @@
 Trigger SIMSCAN APK CI build.
+Retry after CameraX compatibility patch.
