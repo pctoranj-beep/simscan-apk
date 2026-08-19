@@ -1,0 +1,1 @@
+SIMSCAN FAST V3: fast barcode first, then handwritten mobile OCR on front/back, editable rows, XLSX export.
