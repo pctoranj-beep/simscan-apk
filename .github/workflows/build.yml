@@ -22,6 +22,11 @@ jobs:
           unzip -t project.zip
           unzip -q project.zip
 
+      - name: Compatibility patch
+        shell: bash
+        run: |
+          sed -i "s/def camerax_version = '1.6.1'/def camerax_version = '1.4.2'/" simscan_native_fast/app/build.gradle
+
       - name: Set up Java 17
         uses: actions/setup-java@v4
         with:
