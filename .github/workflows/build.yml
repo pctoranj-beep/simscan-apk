@@ -14,16 +14,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Rebuild Android project v2
-        shell: bash
-        run: |
-          cat v2chunks/00.txt v2chunks/01.txt v2chunks/02.txt v2chunks/03.txt v2chunks/04.txt > project_v2.b64
-          base64 -d project_v2.b64 > project_v2.zip
-          unzip -t project_v2.zip
-          unzip -q -o project_v2.zip
-
       - name: Set up Java 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
@@ -39,16 +31,16 @@ jobs:
         with:
           gradle-version: '8.9'
 
-      - name: Build debug APK
-        working-directory: simscan_native_fast
+      - name: Build V3 debug APK
+        working-directory: simscan_v3
         run: gradle :app:assembleDebug --stacktrace
 
-      - name: Prepare APK
-        run: cp simscan_native_fast/app/build/outputs/apk/debug/app-debug.apk SIMSCAN_FAST_V2.apk
+      - name: Prepare V3 APK
+        run: cp simscan_v3/app/build/outputs/apk/debug/app-debug.apk SIMSCAN_FAST_V3.apk
 
-      - name: Upload APK
+      - name: Upload V3 APK
         uses: actions/upload-artifact@v4
         with:
-          name: SIMSCAN_FAST_V2_APK
-          path: SIMSCAN_FAST_V2.apk
+          name: SIMSCAN_FAST_V3_APK
+          path: SIMSCAN_FAST_V3.apk
           if-no-files-found: error
