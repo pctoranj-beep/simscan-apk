@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="7dp"
+    android:background="@drawable/panel"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    android:layoutDirection="rtl">
+
+    <TextView
+        android:id="@+id/rowNumber"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/accent"
+        android:textStyle="bold"
+        android:text="1" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/phoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="شماره: —"
+            android:textColor="@color/text"
+            android:textStyle="bold"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/barcodeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="بارکد: 8998..."
+            android:textColor="@color/muted"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/statusBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="در انتظار شماره"
+            android:textColor="@color/warning"
+            android:textSize="11sp" />
+    </LinearLayout>
+</LinearLayout>
